@@ -1,0 +1,310 @@
+/* Color Palette Variables */
+:root {
+    --primary-white: #ffffff;
+    --primary-black: #111111;
+    --secondary-red: #B90E0A; /* Royal Red */
+    --secondary-gold: #D4AF37; /* Royal Gold */
+    --text-dark: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--primary-white);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid var(--secondary-gold);
+}
+
+.logo h1 {
+    color: var(--secondary-gold);
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--primary-white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--secondary-gold);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    border-bottom: 5px solid var(--secondary-red);
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-white);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #cccccc;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--secondary-red);
+    color: var(--primary-white);
+    border: 2px solid var(--secondary-red);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--secondary-red);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--secondary-gold);
+    border: 2px solid var(--secondary-gold);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-gold);
+    color: var(--primary-black);
+}
+
+/* Intro Section */
+.intro {
+    padding: 4rem 10%;
+    text-align: center;
+}
+
+.intro h3 {
+    color: var(--secondary-red);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 3px solid var(--secondary-gold);
+}
+
+/* Simple Mobile Menu Setup */
+.hamburger { display: none; cursor: pointer; }
+.hamburger span { display: block; width: 25px; height: 3px; background-color: var(--secondary-gold); margin: 5px; }
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: block; }
+}
+/* Page Headers (History, Newsletter, Projects) */
+.page-header {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    padding: 4rem 20px;
+    text-align: center;
+    border-bottom: 3px solid var(--secondary-gold);
+}
+
+.page-header h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-gold);
+    margin-bottom: 0.5rem;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 4rem 10%;
+    background-color: var(--primary-white);
+}
+
+.text-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.text-container h3 {
+    color: var(--secondary-red);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.text-container p {
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+/* Form Styling */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    border-top: 4px solid var(--secondary-red);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--primary-black);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--secondary-gold);
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+.submit-btn {
+    width: 100%;
+    font-size: 1.1rem;
+    margin: 1rem 0 0 0;
+    cursor: pointer;
+}
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: var(--primary-white);
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    background-color: #f0f0f0;
+}
+
+.img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-weight: bold;
+    background: linear-gradient(45deg, #eee, #ddd);
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.status-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 3px 10px;
+    background-color: var(--secondary-gold);
+    color: var(--primary-black);
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+.status-tag.completed {
+    background-color: var(--secondary-red);
+    color: var(--primary-white);
+}
+
+.project-info h3 {
+    color: var(--primary-black);
+    margin-bottom: 0.5rem;
+}
+
+.project-info p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.read-more {
+    text-decoration: none;
+    color: var(--secondary-red);
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: var(--secondary-gold);
+}

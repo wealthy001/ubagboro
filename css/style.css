@@ -1,9 +1,9 @@
 /* Color Palette Variables */
 :root {
     --primary-white: #ffffff;
-    --primary-black: #111111;
-    --secondary-red: #B90E0A; /* Royal Red */
-    --secondary-gold: #D4AF37; /* Royal Gold */
+    --primary-black: #c90000;
+    --secondary-red: #B90E0A; 
+    --secondary-gold: #D4AF37; /* Changed from #dbdbdb to a real royal gold hex code */
     --text-dark: #333333;
 }
 
@@ -35,9 +35,21 @@ body {
 }
 
 .logo h1 {
-    color: var(--secondary-gold);
+    color: var(--primary-white);
     font-size: 1.8rem;
     letter-spacing: 1px;
+}
+/* Align the logo image and text side-by-side */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds a little space between the image and the text */
+}
+
+/* Control the size of the logo image */
+.logo img {
+    height: 40px; /* You can increase or decrease this number to get the perfect size */
+    width: auto;
 }
 
 .nav-links {
@@ -59,7 +71,13 @@ body {
 
 /* Hero Section */
 .hero {
-    background-color: var(--primary-black);
+    /* Fallback color if the image doesn't load */
+    background-color: var(--primary-black); 
+    /* Adds a dark gradient overlay so your white text stays readable over the image */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: var(--primary-white);
     height: 70vh;
     display: flex;
@@ -68,6 +86,17 @@ body {
     text-align: center;
     padding: 0 20px;
     border-bottom: 5px solid var(--secondary-red);
+}
+.btn-gold {
+    background-color: var(--secondary-gold);
+    color: #111; /* Dark text for better contrast against the gold background */
+    border: 2px solid var(--secondary-gold);
+}
+
+.btn-gold:hover {
+    background-color: transparent;
+    color: var(--secondary-gold);
+    border: 2px solid var(--secondary-gold);
 }
 
 .hero-content h2 {
